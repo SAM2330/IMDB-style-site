@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Movie - IMDb Clone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">IMDb</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="watchlist.html">Watchlist</a>
+  </nav>
+</header>
+
+<div class="movie-detail">
+  <img id="moviePoster">
+
+  <div class="movie-info">
+    <h1 id="movieTitle"></h1>
+    <p><strong>Year:</strong> <span id="movieYear"></span></p>
+    <p><strong>Rating:</strong> ⭐ <span id="movieRating"></span></p>
+    <p><strong>Genre:</strong> <span id="movieGenre"></span></p>
+    <p><strong>Actors:</strong> <span id="movieActors"></span></p>
+    <p id="moviePlot"></p>
+
+    <button id="addWatchlistBtn">+ Add to Watchlist</button>
+    <button id="watchTrailerBtn"> Watch trailer</button>
+  </div>
+</div>
+<section id="trailerSection">
+  <h2>Trailer</h2>
+
+  <div class="trailer-wrapper">
+    <iframe
+      id="trailerIframe"
+      width="100%"
+      height="450"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
+  </div>
+</section>
+
+
+<script src="script.js"></script>
+</body>
+</html>
