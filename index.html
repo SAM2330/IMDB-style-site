@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IMDb Clone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">IMDb</div>
+
+  <form id="searchForm">
+    <input type="text" id="searchInput" placeholder="Search movies...">
+    <button type="submit">Search</button>
+  </form>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="watchlist.html">Watchlist</a>
+  </nav>
+</header>
+
+<section class="top10-section">
+  <h2>Top 10 on IMDb This Week</h2>
+
+  <!-- Top 3 Featured -->
+  <div class="top3" id="top3"></div>
+
+  <!-- Bottom 7 -->
+  <div class="grid" id="top10rest"></div>
+</section>
+
+<section>
+  <h2>Top Picks For You</h2>
+  <div class="movie-carousel" id="topPicks"></div>
+</section>
+
+<section>
+  <h2>Fan favorites</h2>
+  <div class="movie-carousel" id="fanFavorites"></div>
+</section>
+<section>
+  <h2>Action Movies</h2>
+  <div class="movie-carousel" id="actionMovies"></div>
+</section>
+
+<section>
+  <h2>Drama Series</h2>
+  <div class="movie-carousel" id="dramaTV"></div>
+</section>
+
+<section>
+  <h2>Comedy Movies</h2>
+  <div class="movie-carousel" id="comedyMovies"></div>
+</section>
+
+<section>
+  <h2>Thriller Movies</h2>
+  <div class="movie-carousel" id="thrillerMovies"></div>
+</section>
+<section>
+  <h2>Sci-fi Series</h2>
+  <div class="movie-carousel" id="scifiTV"></div>
+</section>
+<section>
+  <h2>Crime Series</h2>
+  <div class="movie-carousel" id="crimeTV"></div>
+</section>
+<section>
+  <h2>Mystery Series</h2>
+  <div class="movie-carousel" id="mysteryTV"></div>
+</section>
+
+
+<script src="script.js"></script>
+</body>
+</html>
