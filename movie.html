@@ -1,50 +1,58 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Movie - IMDb Clone</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header>
-  <div class="logo">IMDb</div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="watchlist.html">Watchlist</a>
-  </nav>
-</header>
+  <header>
+    <div class="logo">IMDb</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="watchlist.html">Watchlist</a>
+    </nav>
+  </header>
 
-<div class="movie-detail">
-  <img id="moviePoster">
+  <div class="movie-detail">
+    <img id="moviePoster">
 
-  <div class="movie-info">
-    <h1 id="movieTitle"></h1>
-    <p><strong>Year:</strong> <span id="movieYear"></span></p>
-    <p><strong>Rating:</strong> ⭐ <span id="movieRating"></span></p>
-    <p><strong>Genre:</strong> <span id="movieGenre"></span></p>
-    <p><strong>Actors:</strong> <span id="movieActors"></span></p>
-    <p id="moviePlot"></p>
+    <div class="movie-info">
+      <h1 id="movieTitle"></h1>
+      <p><strong>Year:</strong> <span id="movieYear"></span></p>
+      <p><strong>Rating:</strong> ⭐ <span id="movieRating"></span></p>
+      <p><strong>Genre:</strong> <span id="movieGenre"></span></p>
+      <p><strong>Actors:</strong> <span id="movieActors"></span></p>
+      <p id="moviePlot"></p>
 
-    <button id="addWatchlistBtn">+ Add to Watchlist</button>
-    <button id="watchTrailerBtn"> Watch trailer</button>
+      <button id="addWatchlistBtn">+ Add to Watchlist</button>
+      <button id="watchTrailerBtn"> Watch trailer</button>
+      <button id="watchMovieBtn" style="background-color: #e50914; color: white; border: none; margin-left:10px;">Play
+        Movie</button>
+    </div>
   </div>
-</div>
-<section id="trailerSection">
-  <h2>Trailer</h2>
 
-  <div class="trailer-wrapper">
-    <iframe
-      id="trailerIframe"
-      width="100%"
-      height="450"
-      frameborder="0"
-      allow="autoplay; encrypted-media"
-      allowfullscreen>
-    </iframe>
+  <!-- Video Player Modal -->
+  <div id="playerModal" class="modal">
+    <div class="modal-content">
+      <span class="close-player">&times;</span>
+      <iframe id="playerIframe" width="100%" height="500px" frameborder="0" allowfullscreen></iframe>
+    </div>
   </div>
-</section>
+  <section id="trailerSection">
+    <h2>Trailer</h2>
+
+    <div class="trailer-wrapper">
+      <iframe id="trailerIframe" width="100%" height="450" frameborder="0" allow="autoplay; encrypted-media"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
 
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>

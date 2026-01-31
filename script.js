@@ -34,7 +34,7 @@ function createMovieCard(item) {
 async function loadTop10() {
   const top3Container = document.getElementById("top3");
   const restContainer = document.getElementById("top10rest");
-if (!top3Container || !restContainer) return;
+  if (!top3Container || !restContainer) return;
   const res = await fetch(
     `${TMDB_BASE}/trending/all/week?api_key=${TMDB_KEY}`
   );
@@ -131,7 +131,7 @@ loadSearchResults();
 // loadMovieDetails();
 async function loadMovieDetails() {
   const id = getParam("id");
-  const type = getParam("type") || "movie"; 
+  const type = getParam("type") || "movie";
   if (!id) return;
 
   const res = await fetch(
@@ -174,7 +174,10 @@ async function loadMovieDetails() {
 
   addBtn.onclick = () => addToWatchlist(item, type);
 
+  addBtn.onclick = () => addToWatchlist(item, type);
+
   setupTrailer(item);
+  setupPlayer(item, type);
 }
 loadMovieDetails();
 
@@ -269,7 +272,7 @@ function autoScroll(containerId) {
   }, 6000);
 }
 
- 
+
 
 autoScroll("topPicks");
 autoScroll("classics");
@@ -346,9 +349,9 @@ loadMoviesByGenre(27, "horrorMovies");
 loadMoviesByGenre(53, "thrillerMovies");
 loadMoviesByGenre(878, "scifiMovies");
 loadTVByGenre(18, "dramaTV");            // Drama TV
-loadTVByGenre(80, "crimeTV"); 
-loadTVByGenre(10765, "scifiTV"); 
-loadTVByGenre(9648, "mysteryTV"); 
+loadTVByGenre(80, "crimeTV");
+loadTVByGenre(10765, "scifiTV");
+loadTVByGenre(9648, "mysteryTV");
 
 autoScroll("actionMovies");
 autoScroll("dramaTV");
@@ -380,6 +383,33 @@ function setupTrailer(item) {
       behavior: "smooth",
       block: "start"
     });
+  };
+}
+
+function setupPlayer(item, type) {
+  const playBtn = document.getElementById("watchMovieBtn");
+  const modal = document.getElementById("playerModal");
+  const closeBtn = document.querySelector(".close-player");
+  const iframe = document.getElementById("playerIframe");
+
+  if (!playBtn || !modal || !closeBtn || !iframe) return;
+
+  playBtn.onclick = () => {
+    modal.style.display = "block";
+    // Use vidsrc.xyz for embedding
+    iframe.src = `https://vidsrc.xyz/embed/${type}/${item.id}`;
+  };
+
+  closeBtn.onclick = () => {
+    modal.style.display = "none";
+    iframe.src = ""; // Stop video
+  };
+
+  window.onclick = (event) => {
+    if (event.target == modal) {
+      modal.style.display = "none";
+      iframe.src = "";
+    }
   };
 }
 
